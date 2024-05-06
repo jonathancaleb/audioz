@@ -19,7 +19,7 @@ Future<AudioHandler> initAudioService() async {
     config: const AudioServiceConfig(
       androidNotificationIcon: 'mipmap/ic_launcher_monochrome',
       androidNotificationChannelId: 'com.mycompany.myapp.audio',
-      androidNotificationChannelName: 'Harmony Music Notification',
+      androidNotificationChannelName: 'Audioz Music Notification',
       androidNotificationOngoing: true,
       androidStopForegroundOnPause: true,
     ),
@@ -152,10 +152,10 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
 
   Future<void> _triggerNext() async {
     if (loopModeEnabled) {
-     await _player.seek(Duration.zero);
-     if(!_player.playing){
-      _player.play();
-     }
+      await _player.seek(Duration.zero);
+      if (!_player.playing) {
+        _player.play();
+      }
       return;
     }
     skipToNext();
@@ -407,7 +407,8 @@ class MyAudioHandler extends BaseAudioHandler with GetxServiceMixin {
 
   @override
   Future<void> onTaskRemoved() async {
-    final stopForegroundService = Get.find<SettingsScreenController>().stopPlyabackOnSwipeAway.value;
+    final stopForegroundService =
+        Get.find<SettingsScreenController>().stopPlyabackOnSwipeAway.value;
     if (stopForegroundService) {
       await stop();
     }
