@@ -282,7 +282,7 @@ class SettingsScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
             child: Text(
-              "${settingsController.currentVersion} by YG Studio",
+              "${settingsController.currentVersion} by Caleb",
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),
